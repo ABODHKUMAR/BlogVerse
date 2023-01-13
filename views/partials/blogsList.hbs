@@ -1,0 +1,23 @@
+ <style>
+        .button-st {
+    width: 150px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+</style>
+<div class="blogList">
+    <h1>Blogs</h1> <br>
+    {{#each blogs as |blog|}}
+    <div class="blogListItem">
+        <b>{{blog.username}}</b> : {{blog.blogContent}}
+        <form action="/blogs/{{blog.id}}" method="GET">
+            <button class="button-st" style="margin-top: 5px; height=4px;">Show</button>
+        </form>
+    </div>
+    {{/each}}
+</div>
